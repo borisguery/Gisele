@@ -1,0 +1,18 @@
+{
+    "name": "borisguery/gisele",
+    "require": {
+        "fabpot/goutte": "dev-master",
+        "symfony/console": "dev-master",
+        "symfony/class-loader": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Boris Guéry",
+            "email": "guery.b@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Gisele": "src/" }
+    },
+    "bin": ["bin/gisele"]
+}
