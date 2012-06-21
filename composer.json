@@ -1,5 +1,10 @@
 {
     "name": "borisguery/gisele",
+    "description": "Gisele allows you to do Google Search on CLI (currently supports Image search, Web search, and News search)",
+    "keywords": ["google", "cli", "console", "search", "Goutte"],
+    "type": "metapackage",
+    "homepage": "https://github.com/borisguery/Gisele",
+    "license": "WTFPL",
     "require": {
         "fabpot/goutte": "dev-master",
         "symfony/console": "dev-master",
@@ -8,7 +13,8 @@
     "authors": [
         {
             "name": "Boris Guéry",
-            "email": "guery.b@gmail.com"
+            "email": "guery.b@gmail.com",
+            "homepage": "http://borisguery.com"
         }
     ],
     "autoload": {
@@ -16,3 +22,4 @@
     },
     "bin": ["bin/gisele"]
 }
+
