@@ -83,6 +83,10 @@ abstract class SearchCommand extends BaseCommand
 
     protected function parseUrlString($url)
     {
+        // PHP < 5.3.3 returns false if scheme and host are missing
+        if ('http' !== substr($url, 0, 4)) {
+            $url = sprintf('http://foo.bar.com/%s', $url);
+        }
         $url = parse_url($url);
 
         $queryParameters = array();

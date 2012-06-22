@@ -41,7 +41,7 @@ class WebSearchCommand extends SearchCommand
         $format = (null !== $input->getOption('format')) ? $input->getOption('format') : "{counter}) {title} - {link}";
 
         $crawler = $this->getCrawler(
-                'https://www.google.com/search?um=1&hl=en&q=%s&safe=off&tbs=isz:l',
+                'https://www.google.com/search?um=1&hl=en&q=%s&safe=off',
                 $query
         );
 
