@@ -6,7 +6,7 @@ Gisele is simple tool which allows you to make a Google search in CLI
 Installation
 --------------------
 
-1. Download the [`gisele.phar`](https://github.com/borisguery/Gisele/blob/master/build/gisele.phar?raw=true) executable
+1. Download the [`gisele.phar`](https://github.com/borisguery/Gisele/raw/master/build/gisele.phar) executable
 2. Run Gisele: `php gisele.phar`
 
 Installation from Source
