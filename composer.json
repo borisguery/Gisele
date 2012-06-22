@@ -7,8 +7,7 @@
     "license": "WTFPL",
     "require": {
         "fabpot/goutte": "dev-master",
-        "symfony/console": "dev-master",
-        "symfony/class-loader": "dev-master"
+        "symfony/console": "dev-master"
     },
     "authors": [
         {
