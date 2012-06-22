@@ -40,8 +40,8 @@ class ImageSearchCommand extends SearchCommand
         $format = (null !== $input->getOption('format')) ? $input->getOption('format') : "{counter}) {link}";
 
         $crawler = $this->getCrawler(
-            'https://www.google.com/search?um=1&hl=en&q=%s&tbm=isch&safe=off&tbs=isz:l',
-            $query
+            'https://www.google.com/search?hl=en&q=%query%&safe=%safemode%&tbm=isch&tbs=isz:l',
+            $input
         );
 
         $counter = 0;

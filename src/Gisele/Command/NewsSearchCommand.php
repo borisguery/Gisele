@@ -43,8 +43,8 @@ class NewsSearchCommand extends SearchCommand
         $format = (null !== $input->getOption('format')) ? $input->getOption('format') : "{counter}) {title} - {link} ({from} - {ago} ago)";
 
         $crawler = $this->getCrawler(
-            'https://www.google.com/search?hl=en&q=%s&safe=off&tbm=nws',
-            $query
+            'https://www.google.com/search?hl=en&q=%query%&safe=%safemode%&tbm=nws',
+            $input
         );
 
         $counter = 0;

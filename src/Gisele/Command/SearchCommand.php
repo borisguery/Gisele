@@ -41,14 +41,23 @@ abstract class SearchCommand extends BaseCommand
             ->addOption('interactive', 'i', InputOption::VALUE_NONE, 'Ask confirmation before fetching next page')
             ->addOption('max-result', 'm', InputOption::VALUE_REQUIRED, 'The maximum of result to fetch', null)
             ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'Custom format to render the results')
-            ->addOption('lucky', 'l', InputOption::VALUE_NONE, 'Are you lucky? Stop at the first result');
+            ->addOption('lucky', 'l', InputOption::VALUE_NONE, 'Are you lucky? Stop at the first result')
+            ->addOption('safemode', 's', InputOption::VALUE_NONE, 'Enable safe mode')
+        ;
     }
 
-    protected function getCrawler($url, $query)
+    protected function getCrawler($url, InputInterface $input)
     {
-        $url = sprintf(
-            $url,
-            $query
+        $url = str_replace(
+          array(
+              '%query%',
+              '%safemode%',
+          ),
+          array(
+              $input->getArgument('query'),
+              ($input->getOption('safemode')) ? 'on' : 'off',
+          ),
+          $url
         );
 
         return $this->getHttpClient()
