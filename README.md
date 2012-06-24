@@ -54,6 +54,28 @@ All commands have the following options:
  --lucky (-l)
  ```
  Are you lucky? Stop at the first result
+ 
+ 
+Tips & Tricks
+-------------
+
+How to automaticaly open the result in a browser using the `--lucky` option?
+``` sh
+php gisele.phar web -l "github" -f "{link}" | xargs open $1
+```
+
+(Replace `open` by `xdg-open` on Linux)
+
+How to download the 20 first images from search result?
+``` sh
+php build/gisele.phar image -m20 "github" -f "{link}" | xargs wget -P results/ -nd $1
+```
+
+How do I save results while display them to the screen?
+``` sh
+php gisele.phar news "github" | tee results.txt
+```
+
 
 Contributing
 ------------
